@@ -78,8 +78,8 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  padding: 10px 12px;
+  font-size: 14px;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
@@ -98,7 +98,7 @@ button {
   transition: all 0.3s ease;
 }
 
-button.pointer {
+button.pointer-fine {
   padding: 10px 20px;
   border: 1px solid $blue;
   background-color: white;
@@ -112,7 +112,35 @@ button.pointer {
   }
 }
 
-button.any-hover {
+button.pointer-coarse {
+  padding: 10px 20px;
+  border: 1px solid $blue;
+  background-color: white;
+  color: $blue;
+
+  @media (pointer: coarse) {
+    &:hover {
+      background-color: $blue;
+      color: $white;
+    }
+  }
+}
+
+button.pointer-none {
+  padding: 10px 20px;
+  border: 1px solid $blue;
+  background-color: white;
+  color: $blue;
+
+  @media (pointer: none) {
+    &:hover {
+      background-color: $blue;
+      color: $white;
+    }
+  }
+}
+
+button.any-hover-hover {
   padding: 10px 20px;
   border: 1px solid $green;
   background-color: $white;
@@ -126,13 +154,41 @@ button.any-hover {
   }
 }
 
-button.hover {
+button.any-hover-none {
+  padding: 10px 20px;
+  border: 1px solid $green;
+  background-color: $white;
+  color: $green;
+
+  @media (any-hover: none) {
+    &:hover {
+      background-color: $green;
+      color: $white;
+    }
+  }
+}
+
+button.hover-hover {
   padding: 10px 20px;
   border: 1px solid $red;
   background-color: $white;
   color: $red;
 
   @media (hover: hover) {
+    &:hover {
+      background-color: $red;
+      color: $white;
+    }
+  }
+}
+
+button.hover-none {
+  padding: 10px 20px;
+  border: 1px solid $red;
+  background-color: $white;
+  color: $red;
+
+  @media (hover: none) {
     &:hover {
       background-color: $red;
       color: $white;
